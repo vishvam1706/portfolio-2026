@@ -1,26 +1,233 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------------- THEME TOKENS ---------------- */
+
+@theme {
+  --color-accent: #f5c842;
+  --color-accent-blue: #4f9cf9;
+  --color-bg: #f8f8f6;
+  --color-text: #111;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ---------------- BASE ---------------- */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    overflow-x: hidden;
+    cursor: none;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------------- COMPONENTS ---------------- */
+
+@layer components {
+  .hero-title {
+    font-weight: 900;
+    line-height: 0.88;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+
+  .hero-outline {
+    -webkit-text-stroke: 2px #111;
+    color: transparent;
+  }
+
+  .nav-link {
+    @apply relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: #111;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  .project-card {
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .project-img {
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .project-card:hover .project-img {
+    transform: scale(1.04);
+  }
+
+  .skill-pill {
+    transition: all 0.25s ease;
+  }
+
+  .skill-pill:hover {
+    background: #111;
+    color: #f8f8f6;
+  }
+
+  .contact-input {
+    @apply bg-transparent border-none outline-none w-full py-3;
+    border-bottom: 1.5px solid rgba(17, 17, 17, 0.2);
+    transition: border-color 0.3s ease;
+  }
+
+  .contact-input:focus {
+    border-color: #111;
+  }
+
+  .contact-input::placeholder {
+    color: rgba(17, 17, 17, 0.35);
+  }
+
+  .marquee-track {
+    animation: marquee 18s linear infinite;
+    display: flex;
+    width: max-content;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .scroll-dot {
+    animation: scrollPulse 1.5s ease infinite;
+  }
+
+  .noise::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9997;
+    opacity: 0.5;
+  }
+}
+
+/* ---------------- UTILITIES ---------------- */
+
+@layer utilities {
+  .section-num {
+    font-size: clamp(100px, 15vw, 180px);
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.04);
+    line-height: 1;
+    position: absolute;
+    top: -0.1em;
+    left: -0.05em;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .hr-accent {
+    height: 1.5px;
+    background: linear-gradient(to right, #111 40%, transparent 100%);
+  }
+}
+
+/* ---------------- KEYFRAMES ---------------- */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ---------------- ANIMATION CLASSES ---------------- */
+
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* ---------------- SELECTION ---------------- */
+
+::selection {
+  background: #f5c842;
+  color: #111;
+}
+
+::-moz-selection {
+  background: #f5c842;
+  color: #111;
+}
+
+/* ---------------- CURSOR ---------------- */
+
+*,
+*::before,
+*::after {
+  cursor: none !important;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width: 768px) {
+  *,
+  *::before,
+  *::after {
+    cursor: auto !important;
+  }
+  body {
+    cursor: auto;
+  }
+  .hero-outline {
+    -webkit-text-stroke: 1.5px #111;
+  }
 }
