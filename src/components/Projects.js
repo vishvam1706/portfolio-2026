@@ -1,60 +1,77 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 
 const projects = [
   {
     id: "01",
-    title: "E-Commerce Platform",
+    title: "HealioScan",
     description:
-      "Full-stack e-commerce solution with real-time inventory, Stripe payments, admin dashboard and REST API.",
-    tags: ["Next.js", "Node.js", "MongoDB", "Stripe", "Tailwind"],
-    type: "Full Stack",
-    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+      "Pancreatic Cancer detection AI/ML web platform. Led the project from inception to delivery — coordinating ML engineers, frontend devs, and medical stakeholders to ensure regulatory alignment and on-time launch.",
+    tags: ["AI/ML", "Healthcare", "Web Platform", "Python"],
+    type: "AI / Healthcare",
+    img: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80",
     link: "#",
-    github: "#",
     featured: true,
   },
   {
     id: "02",
-    title: "3D Portfolio Viewer",
+    title: "QeraBath Assets",
     description:
-      "Interactive 3D product showcase built with Three.js and React, with GLTF model support and custom shaders.",
-    tags: ["React", "Three.js", "WebGL", "GSAP"],
-    type: "Frontend",
-    img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      "Bath accessories coupon and marketing cross-platform application. Managed full SDLC including UX research, sprint planning, and coordinating iOS/Android developers to deliver on schedule.",
+    tags: ["Cross-Platform", "iOS", "Android", "Marketing"],
+    type: "Mobile App",
+    img: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
     link: "#",
-    github: "#",
     featured: true,
   },
   {
     id: "03",
-    title: "Real-Time Chat App",
+    title: "Ambaji Temple",
     description:
-      "Multi-room chat with WebSocket, user auth via JWT, message history persisted in MongoDB.",
-    tags: ["Express", "Socket.io", "MongoDB", "React"],
-    type: "Full Stack",
-    img: "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=80",
+      "Official website and administrative panel for Ambaji Temple. Defined system requirements, coordinated design and development teams, and oversaw QA to ensure a seamless public-facing and admin experience.",
+    tags: ["Web", "Admin Panel", "CMS", "React"],
+    type: "Web Platform",
+    img: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&q=80",
     link: "#",
-    github: "#",
     featured: false,
   },
   {
     id: "04",
-    title: "REST API Boilerplate",
+    title: "PassportV3",
     description:
-      "Production-ready Express + MongoDB API with auth, rate limiting, error handling, and documentation.",
-    tags: ["Node.js", "Express", "MongoDB", "JWT"],
-    type: "Backend",
-    img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+      "Android & iOS passport management application. Managed end-to-end delivery including timeline planning, freelancer coordination, and quality assurance across both platforms.",
+    tags: ["Android", "iOS", "React Native", "APIs"],
+    type: "Mobile App",
+    img: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80",
     link: "#",
-    github: "#",
+    featured: false,
+  },
+  {
+    id: "05",
+    title: "Gharsansar",
+    description:
+      "Full-featured e-commerce website for home essentials. Oversaw product discovery, vendor coordination, sprint reviews, and UAT — ensuring all deliverables met client expectations within budget.",
+    tags: ["E-Commerce", "Next.js", "Node.js", "MongoDB"],
+    type: "E-Commerce",
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    link: "#",
+    featured: false,
+  },
+  {
+    id: "06",
+    title: "Zynext Ventures",
+    description:
+      "Corporate website for a tech venture firm. Managed scope definition, content strategy, and coordinated design and dev resources to deliver a polished, professional presence.",
+    tags: ["Corporate", "Web", "Branding", "CMS"],
+    type: "Web Platform",
+    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
+    link: "#",
     featured: false,
   },
 ];
 
-const filters = ["All", "Full Stack", "Frontend", "Backend"];
+const filters = ["All", "AI / Healthcare", "Mobile App", "Web Platform", "E-Commerce"];
 
 export default function Projects() {
   const ref = useRef(null);
@@ -120,7 +137,7 @@ export default function Projects() {
             >
               Projects
               <br />
-              <span className="hero-outline">I've Built</span>
+              <span className="hero-outline">I&apos;ve Managed</span>
             </h2>
           </div>
 
@@ -166,7 +183,7 @@ export default function Projects() {
           }}
         >
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/Marujigar"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 border border-[#111] text-[#111] text-sm font-medium rounded-full hover:bg-[#111] hover:text-[#f8f8f6] transition-all duration-300"
@@ -255,18 +272,20 @@ function ProjectRow({ project, index }) {
       </div>
 
       {/* Hover image preview */}
-      <div
-        className={`absolute right-32 top-1/2 -translate-y-1/2 w-48 md:w-64 aspect-video rounded-xl overflow-hidden pointer-events-none z-20 transition-all duration-500 ${
-          hovered ? "opacity-100 scale-100" : "opacity-0 scale-95"
-        }`}
-      >
-        <Image
-          src={project.img}
-          alt={project.title}
-          fill
-          className="object-cover"
-        />
-      </div>
+      {project.img && (
+        <div
+          className={`absolute right-32 top-1/2 -translate-y-1/2 w-48 md:w-64 aspect-video rounded-xl overflow-hidden pointer-events-none z-20 transition-all duration-500 ${
+            hovered ? "opacity-100 scale-100" : "opacity-0 scale-95"
+          }`}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={project.img}
+            alt={project.title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
     </div>
   );
 }

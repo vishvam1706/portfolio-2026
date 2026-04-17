@@ -4,51 +4,60 @@ import { useEffect, useRef } from "react";
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Project Management",
+    emoji: "📋",
+    skills: [
+      "ClickUp",
+      "Monday.com",
+      "Asana",
+      "Agile / Scrum",
+      "Risk Management",
+      "Stakeholder Mgmt",
+      "Timeline Planning",
+      "Budget Control",
+    ],
+  },
+  {
+    title: "Software Analysis",
+    emoji: "🔍",
+    skills: [
+      "Requirements Gathering",
+      "System Design",
+      "QA & Testing",
+      "UX Research",
+      "API Review",
+      "Documentation",
+      "Cross-platform Dev",
+      "AI/ML Projects",
+    ],
+  },
+  {
+    title: "Design & Productivity",
     emoji: "🎨",
     skills: [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "React.js",
-      "Next.js 14",
-      "Tailwind CSS",
-      "Three.js",
-      "Framer Motion",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe XD",
+      "Microsoft Office",
+      "Google Workspace",
+      "Notion",
+      "Slack",
+      "Zoom",
     ],
   },
   {
-    title: "Backend",
+    title: "Tech Stack Awareness",
     emoji: "⚙️",
     skills: [
+      "Full Tech Stack",
+      "React / Next.js",
       "Node.js",
-      "Express.js",
+      "Android / iOS",
+      "E-commerce",
+      "AI/ML Platforms",
       "REST APIs",
-      "MongoDB",
-      "Mongoose",
-      "JWT Auth",
-      "WebSockets",
-      "Middleware",
+      "Cloud Deployment",
     ],
-  },
-  {
-    title: "DevOps & Tools",
-    emoji: "🛠",
-    skills: [
-      "Git",
-      "GitHub",
-      "Vercel",
-      "Docker",
-      "Postman",
-      "VS Code",
-      "Linux",
-      "npm/yarn",
-    ],
-  },
-  {
-    title: "Currently Learning",
-    emoji: "🚀",
-    skills: ["TypeScript", "PostgreSQL", "GraphQL", "Redis", "AWS", "CI/CD"],
   },
 ];
 
@@ -103,7 +112,7 @@ export default function Skills() {
               }}
             >
               <span className="w-8 h-px bg-white/20" />
-              What I use
+              Areas of Expertise
             </span>
             <h2
               className="skill-reveal hero-title text-[clamp(48px,6vw,90px)] leading-[0.92] uppercase text-[#f8f8f6]"
@@ -113,7 +122,7 @@ export default function Skills() {
                 transition: "all 0.8s cubic-bezier(0.23,1,0.32,1)",
               }}
             >
-              My Tech
+              My
               <br />
               <span
                 style={{
@@ -121,7 +130,7 @@ export default function Skills() {
                   color: "transparent",
                 }}
               >
-                Stack
+                Toolkit
               </span>
             </h2>
           </div>
@@ -134,8 +143,8 @@ export default function Skills() {
               transition: "all 0.7s ease 0.1s",
             }}
           >
-            Technologies I work with daily to build scalable, performant, and
-            user-friendly applications.
+            Tools and methodologies I use daily to plan, execute, and deliver
+            successful software projects.
           </p>
         </div>
 
@@ -176,7 +185,7 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Bottom strip — years exp */}
+        {/* Bottom strip */}
         <div
           className="skill-reveal mt-16 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10 pt-10"
           style={{
@@ -186,13 +195,14 @@ export default function Skills() {
           }}
         >
           <p className="text-white/30 text-sm font-light">
-            Constantly exploring and adding new tools to the arsenal.
+            Constantly evolving — always learning the tools that make teams
+            faster and products better.
           </p>
           <div className="flex items-center gap-8">
             {[
-              { label: "Frontend", val: "95%" },
-              { label: "Backend", val: "85%" },
-              { label: "DevOps", val: "70%" },
+              { label: "On-Time Delivery", val: "98%" },
+              { label: "Client Satisfaction", val: "95%" },
+              { label: "Budget Adherence", val: "100%" },
             ].map((item) => (
               <div
                 key={item.label}

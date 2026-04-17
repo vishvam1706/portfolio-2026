@@ -73,7 +73,7 @@ export default function Contact() {
               transition: "all 0.9s cubic-bezier(0.23,1,0.32,1)",
             }}
           >
-            Let's
+            Let&apos;s
             <br />
             <span className="hero-outline">Work</span>
             <br />
@@ -93,8 +93,8 @@ export default function Contact() {
               }}
             >
               <p className="text-[#111]/60 text-base font-light leading-relaxed max-w-sm">
-                Have a project in mind? Looking for a developer to join your
-                team? Or just want to say hello? My inbox is always open.
+                Have a project that needs experienced project management?
+                Looking to turn a complex idea into a shipping product? Let&apos;s talk.
               </p>
             </div>
 
@@ -103,18 +103,23 @@ export default function Contact() {
               {[
                 {
                   label: "Email",
-                  value: "hello@yourname.dev",
-                  href: "mailto:hello@yourname.dev",
+                  value: "jigarmaru31@gmail.com",
+                  href: "mailto:jigarmaru31@gmail.com",
+                },
+                {
+                  label: "Phone",
+                  value: "+91 81411 55884",
+                  href: "tel:+918141155884",
                 },
                 {
                   label: "LinkedIn",
-                  value: "/in/yourname",
-                  href: "https://linkedin.com/in/yourname",
+                  value: "/in/jigarmaru",
+                  href: "https://linkedin.com/in/jigarmaru",
                 },
                 {
                   label: "GitHub",
-                  value: "@yourusername",
-                  href: "https://github.com/yourusername",
+                  value: "@Marujigar",
+                  href: "https://github.com/Marujigar",
                 },
               ].map((item, i) => (
                 <div

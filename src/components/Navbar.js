@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const navLinks = [
   { label: "Work", href: "#projects" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
@@ -34,7 +35,7 @@ export default function Navbar() {
             style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
             className="text-2xl tracking-tight text-[#111] uppercase leading-none"
           >
-            YN
+            JM
           </span>
           <span className="w-2 h-2 rounded-full bg-[#f5c842] group-hover:bg-[#4f9cf9] transition-colors duration-300" />
         </a>
@@ -55,10 +56,10 @@ export default function Navbar() {
         {/* CTA */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="mailto:hello@yourname.dev"
+            href="mailto:jigarmaru31@gmail.com"
             className="px-5 py-2.5 bg-[#111] text-[#f8f8f6] text-sm font-medium rounded-full hover:bg-[#333] transition-colors duration-300"
           >
-            hello@yourname.dev
+            jigarmaru31@gmail.com
           </a>
         </div>
 
@@ -105,10 +106,10 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="mailto:hello@yourname.dev"
+            href="mailto:jigarmaru31@gmail.com"
             className="text-sm text-[#111] opacity-60"
           >
-            hello@yourname.dev
+            jigarmaru31@gmail.com
           </a>
         </div>
       </div>

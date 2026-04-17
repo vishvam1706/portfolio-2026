@@ -1,10 +1,9 @@
 "use client";
 
 const socials = [
-  { label: "GitHub", href: "https://github.com/yourusername" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/yourname" },
-  { label: "Twitter", href: "https://twitter.com/yourhandle" },
-  { label: "Email", href: "mailto:hello@yourname.dev" },
+  { label: "GitHub", href: "https://github.com/Marujigar" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/jigarmaru" },
+  { label: "Email", href: "mailto:jigarmaru31@gmail.com" },
 ];
 
 export default function Footer() {
@@ -21,7 +20,7 @@ export default function Footer() {
               style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
               className="text-3xl tracking-tight uppercase leading-none"
             >
-              YN
+              JM
             </span>
             <span className="w-2.5 h-2.5 rounded-full bg-[#f5c842]" />
           </div>
@@ -58,11 +57,11 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8">
           <p className="text-xs text-white/20 font-light">
-            © {year} Your Name. Designed &amp; developed with ❤️
+            © {year} Jigar Maru. Designed &amp; developed with ❤️
           </p>
 
           <p className="text-xs text-white/20 font-light">
-            Built with Next.js 14 + Tailwind CSS
+            Project Manager · Software Analyst · Jamnagar, Gujarat
           </p>
 
           <button

@@ -31,8 +31,9 @@ const figtree = Figtree({
 });
 
 export const metadata = {
-  title: "Portfolio",
-  description: "Modern Animated Portfolio",
+  title: "Jigar Maru | Project Manager & Software Analyst",
+  description:
+    "Portfolio of Jigar Maru — Project Manager and Software Analyst based in Jamnagar, Gujarat. Experienced in leading high-budget projects, managing cross-functional teams, and delivering on-time results across diverse industries.",
 };
 
 export default function RootLayout({ children }) {
