@@ -12,14 +12,21 @@ export default function Cursor() {
   const [clicking, setClicking] = useState(false);
   const [visible, setVisible] = useState(false);
   const [label, setLabel] = useState("");
+  const [isDesktop, setIsDesktop] = useState(false);
 
   const mouse = useRef({ x: 0, y: 0 });
   const trails = useRef(Array(8).fill({ x: 0, y: 0 }));
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    setMounted(true);
+    setIsDesktop(window.innerWidth > 768);
+    const handleResize = () => setIsDesktop(window.innerWidth > 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
-    if (!mounted) return;
+    if (!mounted || !isDesktop) return;
 
     const onMove = (e) => {
       mouse.current = { x: e.clientX, y: e.clientY };
@@ -96,9 +103,9 @@ export default function Cursor() {
       document.documentElement.removeEventListener("mouseenter", onEnter);
       cancelAnimationFrame(rafRef.current);
     };
-  }, [mounted]);
+  }, [mounted, isDesktop]);
 
-  if (!mounted) return null;
+  if (!mounted || !isDesktop) return null;
 
   const baseStyle = {
     position: "fixed",

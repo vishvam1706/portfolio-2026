@@ -274,7 +274,7 @@ function ProjectRow({ project, index }) {
       {/* Hover image preview */}
       {project.img && (
         <div
-          className={`absolute right-32 top-1/2 -translate-y-1/2 w-48 md:w-64 aspect-video rounded-xl overflow-hidden pointer-events-none z-20 transition-all duration-500 ${
+          className={`hidden md:block absolute right-32 top-1/2 -translate-y-1/2 w-48 md:w-64 aspect-video rounded-xl overflow-hidden pointer-events-none z-20 transition-all duration-500 ${
             hovered ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >

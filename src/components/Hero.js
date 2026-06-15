@@ -82,12 +82,12 @@ export default function Hero() {
       </div>
 
       {/* ── DEPTH STACK — flex-1, full-width, 3 lines ── */}
-      <div className="flex-1 relative w-full px-4 md:px-8 flex flex-col justify-center overflow-hidden">
+      <div className="flex-1 relative w-full px-4 md:px-8 flex flex-col justify-center pt-8 md:pt-0 overflow-hidden">
 
         {/* LINE 1 — "Project Manager" — solid fill, BEHIND photo (z-10) */}
         <div
           className="opacity-0-init relative z-10 hero-title leading-[0.85] text-[#111]"
-          style={{ fontSize: "clamp(40px, min(19dvh, 15vw), 220px)" }}
+          style={{ fontSize: "clamp(36px, min(18dvh, 14vw), 220px)" }}
         >
           Project Manager
         </div>
@@ -95,7 +95,7 @@ export default function Hero() {
         {/* LINE 2 — "& Software" — outline, IN FRONT of photo (z-30) */}
         <div
           className="opacity-0-init relative z-30 hero-title hero-outline leading-[0.85] delay-200"
-          style={{ fontSize: "clamp(40px, min(19dvh, 15vw), 220px)" }}
+          style={{ fontSize: "clamp(36px, min(18dvh, 14vw), 220px)" }}
         >
           &amp; Software
         </div>
@@ -103,7 +103,7 @@ export default function Hero() {
         {/* LINE 3 — "Analyst" — outline, IN FRONT of photo (z-30) */}
         <div
           className="opacity-0-init relative z-30 hero-title hero-outline leading-[0.85] delay-300"
-          style={{ fontSize: "clamp(40px, min(19dvh, 15vw), 220px)" }}
+          style={{ fontSize: "clamp(36px, min(18dvh, 14vw), 220px)" }}
         >
           Analyst
         </div>
