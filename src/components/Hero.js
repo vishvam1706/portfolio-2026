@@ -69,20 +69,19 @@ export default function Hero() {
       {/* Navbar is ~72px on desktop, ~60px on mobile */}
       <div className="h-[60px] md:h-[72px] shrink-0" />
 
-      {/* ── Greeting — sits just below navbar ── */}
-      <div className="opacity-0-init relative z-30 max-w-[1400px] mx-auto px-6 md:px-12 w-full pt-2 md:pt-4">
-        <p
-          className="text-[#111] flex items-center gap-2 font-light"
-          style={{ fontSize: "clamp(12px, 1.6vh, 18px)" }}
-        >
-          <span>👋</span>
-          hi there, my name is{" "}
-          <span className="font-semibold">Jigar Maru</span> and I am a
-        </p>
-      </div>
-
       {/* ── DEPTH STACK — flex-1, full-width, 3 lines ── */}
-      <div className="flex-1 relative w-full px-4 md:px-8 flex flex-col justify-center pt-8 md:pt-0 overflow-hidden">
+      <div className="flex-1 relative w-full px-6 md:px-12 flex flex-col justify-center overflow-hidden">
+        {/* ── Greeting — sits inside the flow ── */}
+        <div className="opacity-0-init relative z-30 w-full mb-3 md:mb-6">
+          <p
+            className="text-[#111] flex items-center gap-2 font-light"
+            style={{ fontSize: "clamp(12px, 1.6vh, 18px)" }}
+          >
+            <span>👋</span>
+            hi there, my name is{" "}
+            <span className="font-semibold">Jigar Maru</span> and I am a
+          </p>
+        </div>
 
         {/* LINE 1 — "Project Manager" — solid fill, BEHIND photo (z-10) */}
         <div
