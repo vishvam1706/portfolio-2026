@@ -51,7 +51,7 @@ export default function Contact() {
 
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Giant CTA */}
-        <div className="text-center mb-20 md:mb-28">
+        <div className="text-left mb-20 md:mb-28">
           <span
             className="contact-reveal inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] font-medium text-[#111]/40 mb-6"
             style={{
@@ -62,11 +62,11 @@ export default function Contact() {
           >
             <span className="w-8 h-px bg-[#111]/30" />
             Get in touch
-            <span className="w-8 h-px bg-[#111]/30" />
+            {/* <span className="w-8 h-px bg-[#111]/30" /> */}
           </span>
 
           <h2
-            className="contact-reveal hero-title text-[clamp(60px,10vw,150px)] leading-[0.88] uppercase text-[#111]"
+            className="hero-title text-[clamp(60px,10vw,150px)] leading-[0.88] uppercase text-[#111] text-left"
             style={{
               opacity: 0,
               transform: "translateY(40px)",
@@ -238,11 +238,10 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "sending" || status === "sent"}
-                className={`w-full py-4 rounded-full text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 ${
-                  status === "sent"
-                    ? "bg-green-500 text-white"
-                    : "bg-[#111] text-[#f8f8f6] hover:bg-[#333]"
-                }`}
+                className={`w-full py-4 rounded-full text-sm font-medium transition-all duration-300 flex items-center justify-center gap-2 ${status === "sent"
+                  ? "bg-green-500 text-white"
+                  : "bg-[#111] text-[#f8f8f6] hover:bg-[#333]"
+                  }`}
               >
                 {status === "sending" && (
                   <svg

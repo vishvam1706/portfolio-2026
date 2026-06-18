@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { ClipboardList, SearchCode, Palette, Layers } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Project Management",
-    emoji: "📋",
+    Icon: ClipboardList,
     skills: [
       "ClickUp",
       "Monday.com",
@@ -19,7 +20,7 @@ const skillCategories = [
   },
   {
     title: "Software Analysis",
-    emoji: "🔍",
+    Icon: SearchCode,
     skills: [
       "Requirements Gathering",
       "System Design",
@@ -33,7 +34,7 @@ const skillCategories = [
   },
   {
     title: "Design & Productivity",
-    emoji: "🎨",
+    Icon: Palette,
     skills: [
       "Adobe Photoshop",
       "Adobe Illustrator",
@@ -47,7 +48,7 @@ const skillCategories = [
   },
   {
     title: "Tech Stack Awareness",
-    emoji: "⚙️",
+    Icon: Layers,
     skills: [
       "Full Tech Stack",
       "React / Next.js",
@@ -162,7 +163,7 @@ export default function Skills() {
             >
               {/* Category header */}
               <div className="flex items-center gap-3">
-                <span className="text-2xl">{cat.emoji}</span>
+                <cat.Icon size={22} strokeWidth={1.5} className="text-[#f5c842]" />
                 <h3 className="text-sm uppercase tracking-widest text-white/50 font-medium">
                   {cat.title}
                 </h3>

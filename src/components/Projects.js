@@ -76,6 +76,7 @@ const filters = ["All", "AI / Healthcare", "Mobile App", "Web Platform", "E-Comm
 export default function Projects() {
   const ref = useRef(null);
   const [activeFilter, setActiveFilter] = useState("All");
+  const [headerRevealed, setHeaderRevealed] = useState(false);
 
   const filtered =
     activeFilter === "All"
@@ -93,6 +94,7 @@ export default function Projects() {
                 el.style.transform = "translateY(0)";
               }, i * 100);
             });
+            setHeaderRevealed(true);
             observer.unobserve(entry.target);
           }
         });
@@ -169,7 +171,7 @@ export default function Projects() {
         {/* Projects list */}
         <div className="flex flex-col gap-0 border-t border-[#111]/10">
           {filtered.map((project, i) => (
-            <ProjectRow key={project.id} project={project} index={i} />
+            <ProjectRow key={`${activeFilter}-${project.id}`} project={project} index={i} revealed={headerRevealed} />
           ))}
         </div>
 
@@ -199,21 +201,30 @@ export default function Projects() {
   );
 }
 
-function ProjectRow({ project, index }) {
+function ProjectRow({ project, index, revealed }) {
   const [hovered, setHovered] = useState(false);
+  const rowRef = useRef(null);
+
+  useEffect(() => {
+    if (revealed && rowRef.current) {
+      const timer = setTimeout(() => {
+        rowRef.current.style.opacity = "1";
+        rowRef.current.style.transform = "translateY(0)";
+      }, index * 100);
+      return () => clearTimeout(timer);
+    }
+  }, [revealed, index]);
 
   return (
     <div
-      className="relative border-b border-[#111]/10 group"
+      ref={rowRef}
+      className="relative border-b border-[#111]/10 group proj-reveal"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
         opacity: 0,
         transform: "translateY(20px)",
         transition: `all 0.7s cubic-bezier(0.23,1,0.32,1) ${index * 100}ms`,
-      }}
-      ref={(el) => {
-        if (el) el.classList.add("proj-reveal");
       }}
     >
       <div className="flex items-center gap-6 py-7 md:py-9 transition-all duration-300">

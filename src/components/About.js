@@ -6,7 +6,7 @@ const stats = [
   { num: "3+", label: "Years Experience" },
   { num: "10+", label: "Projects Managed" },
   { num: "2", label: "Degrees Earned" },
-  { num: "7.98", label: "MCA CGPA" },
+  { num: "7.98", label: "CGPA" },
 ];
 
 const education = [
@@ -70,22 +70,21 @@ export default function About() {
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start font-extrabold leading-[0.88] tracking-tight">
           {/* Left — Big statement + Stats */}
           <div>
             <h2
-              className="reveal-item hero-title text-[clamp(48px,6vw,90px)] leading-[0.92] text-[#111] uppercase"
+              className="reveal-item text-[clamp(48px,6vw,90px)] leading-[0.92] text-[#111] uppercase"
               style={{
                 opacity: 0,
                 transform: "translateY(40px)",
                 transition: "all 0.8s cubic-bezier(0.23,1,0.32,1)",
               }}
             >
-              I Manage
+              I{" "}
+              <span className="hero-outline">Manage <br />& Develop</span>
               <br />
-              <span className="hero-outline">Things</span>
-              <br />
-              That Ship.
+              Things That Ship
             </h2>
 
             {/* Stats grid */}
@@ -134,7 +133,7 @@ export default function About() {
                     className="border-l-2 border-[#f5c842] pl-4"
                   >
                     <p className="text-sm font-semibold text-[#111]">
-                      {edu.degree} — {edu.institution}
+                      {edu.degree} - {edu.institution}
                     </p>
                     <p className="text-xs text-[#111]/50 mt-0.5">
                       {edu.period} &nbsp;·&nbsp; {edu.cgpa}

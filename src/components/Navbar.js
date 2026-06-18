@@ -22,11 +22,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? "bg-[#f8f8f6]/90 backdrop-blur-md border-b border-black/8 py-3"
           : "py-6"
-      }`}
+        }`}
     >
       <nav className="max-w-[1400px] mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
@@ -54,14 +53,14 @@ export default function Navbar() {
         </div>
 
         {/* CTA */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* <div className="hidden md:flex items-center gap-4">
           <a
             href="mailto:jigarmaru31@gmail.com"
             className="px-5 py-2.5 bg-[#111] text-[#f8f8f6] text-sm font-medium rounded-full hover:bg-[#333] transition-colors duration-300"
           >
             jigarmaru31@gmail.com
           </a>
-        </div>
+        </div> */}
 
         {/* Mobile Menu Toggle */}
         <button
@@ -70,28 +69,24 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           <span
-            className={`block h-0.5 bg-[#111] transition-all duration-300 ${
-              menuOpen ? "w-7 rotate-45 translate-y-2" : "w-7"
-            }`}
+            className={`block h-0.5 bg-[#111] transition-all duration-300 ${menuOpen ? "w-7 rotate-45 translate-y-2" : "w-7"
+              }`}
           />
           <span
-            className={`block h-0.5 bg-[#111] transition-all duration-300 ${
-              menuOpen ? "opacity-0 w-0" : "w-5"
-            }`}
+            className={`block h-0.5 bg-[#111] transition-all duration-300 ${menuOpen ? "opacity-0 w-0" : "w-5"
+              }`}
           />
           <span
-            className={`block h-0.5 bg-[#111] transition-all duration-300 ${
-              menuOpen ? "w-7 -rotate-45 -translate-y-2" : "w-7"
-            }`}
+            className={`block h-0.5 bg-[#111] transition-all duration-300 ${menuOpen ? "w-7 -rotate-45 -translate-y-2" : "w-7"
+              }`}
           />
         </button>
       </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-[#f8f8f6]/95 backdrop-blur-md border-b border-black/10 transition-all duration-400 overflow-hidden ${
-          menuOpen ? "max-h-80 py-6" : "max-h-0"
-        }`}
+        className={`md:hidden absolute top-full left-0 right-0 bg-[#f8f8f6]/95 backdrop-blur-md border-b border-black/10 transition-all duration-400 overflow-hidden ${menuOpen ? "max-h-80 py-6" : "max-h-0"
+          }`}
       >
         <div className="px-6 flex flex-col gap-5">
           {navLinks.map((link) => (
@@ -105,12 +100,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <a
-            href="mailto:jigarmaru31@gmail.com"
-            className="text-sm text-[#111] opacity-60"
-          >
-            jigarmaru31@gmail.com
-          </a>
         </div>
       </div>
     </header>

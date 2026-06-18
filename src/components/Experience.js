@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { GraduationCap, Trophy, Award, ScrollText } from "lucide-react";
 
 const experiences = [
   {
     id: "01",
     role: "Project Manager",
     company: "Santushti Infotech Pvt. Ltd. (Fiverr Pro)",
-    location: "Rajkot",
+    location: "Ahmedabad",
     period: "September 2024 – Present",
     current: true,
     description: [
@@ -31,19 +32,19 @@ const experiences = [
     ],
     tags: ["Software Analysis", "AI/ML", "QA", "SDLC", "Multi-platform"],
   },
-  {
-    id: "03",
-    role: "Lab In-charge",
-    company: "C.Z.M. Gosrani B.C.A. College",
-    location: "Jamnagar",
-    period: "June 2022 – August 2022",
-    current: false,
-    description: [
-      "Managed hardware and software configurations as Lab-in-Charge for the college's computer laboratory.",
-      "Delivered lectures on Soft Lab — introducing students to trending and industry-relevant software tools used in the market.",
-    ],
-    tags: ["Lab Management", "Hardware Config", "Software Config", "Teaching"],
-  },
+  // {
+  //   id: "03",
+  //   role: "Lab In-charge",
+  //   company: "C.Z.M. Gosrani B.C.A. College",
+  //   location: "Jamnagar",
+  //   period: "June 2022 – August 2022",
+  //   current: false,
+  //   description: [
+  //     "Managed hardware and software configurations as Lab-in-Charge for the college's computer laboratory.",
+  //     "Delivered lectures on Soft Lab - introducing students to trending and industry-relevant software tools used in the market.",
+  //   ],
+  //   tags: ["Lab Management", "Hardware Config", "Software Config", "Teaching"],
+  // },
 ];
 
 export default function Experience() {
@@ -96,7 +97,7 @@ export default function Experience() {
             }}
           >
             <span className="w-8 h-px bg-[#111]/30" />
-            Work History
+            Professional History
           </span>
           <h2
             className="exp-reveal hero-title text-[clamp(48px,6vw,90px)] leading-[0.92] uppercase text-[#111]"
@@ -106,7 +107,7 @@ export default function Experience() {
               transition: "all 0.8s cubic-bezier(0.23,1,0.32,1)",
             }}
           >
-            Experience
+            Work
             <br />
             <span className="hero-outline">Timeline</span>
           </h2>
@@ -130,52 +131,52 @@ export default function Experience() {
               {/* Dot */}
               <div className="hidden md:flex flex-col items-center shrink-0 mt-2">
                 <div
-                  className={`w-3 h-3 rounded-full border-2 z-10 ${
-                    exp.current
-                      ? "bg-[#f5c842] border-[#f5c842]"
-                      : "bg-[#f0f0ec] border-[#111]/30"
-                  }`}
+                  className={`w-3 h-3 rounded-full border-2 z-10 ${exp.current
+                    ? "bg-[#f5c842] border-[#f5c842]"
+                    : "bg-[#f0f0ec] border-[#111]/30"
+                    }`}
                 />
               </div>
 
               {/* Content */}
               <div className="flex-1">
-                {/* Meta row */}
-                <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-6 mb-4">
-                  <div className="flex items-center gap-3">
-                    <span
-                      className="text-xs text-[#111]/25 font-light shrink-0"
-                      style={{ fontFamily: "var(--font-display)" }}
-                    >
-                      {exp.id}
-                    </span>
-                    {exp.current && (
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#f5c842]/20 rounded-full">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#f5c842] animate-pulse" />
-                        <span className="text-[10px] font-medium text-[#111]/60 uppercase tracking-wider">
-                          Current
-                        </span>
+                {/* Line 1: ID + Role */}
+                <div className="flex items-baseline gap-3 mb-2">
+                  <span
+                    className="hero-title text-[clamp(22px,3vw,40px)] uppercase leading-none text-[#111]/25"
+                    style={{ fontFamily: "var(--font-display)" }}
+                  >
+                    {exp.id}
+                  </span>
+                  <h3
+                    className="hero-title text-[clamp(22px,3vw,40px)] uppercase leading-none text-[#111]"
+                  >
+                    {exp.role}
+                  </h3>
+                </div>
+
+                {/* Line 2: Company + Current badge */}
+                <div className="flex items-center gap-2 mb-2">
+                  <p className="text-sm text-[#111]/50 font-light">
+                    {exp.company}
+                  </p>
+                  {exp.current && (
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 bg-[#f5c842]/20 rounded-full">
+                      <span className="text-[10px] font-medium text-[#111]/60 uppercase tracking-wider">
+                        Current
                       </span>
-                    )}
-                  </div>
+                    </span>
+                  )}
+                </div>
+
+                {/* Line 3: Period + Location */}
+                <div className="flex items-center gap-4 mb-5">
                   <span className="text-xs text-[#111]/40 font-light uppercase tracking-wider">
                     {exp.period}
                   </span>
                   <span className="text-xs text-[#111]/30 font-light">
                     {exp.location}
                   </span>
-                </div>
-
-                {/* Role & Company */}
-                <div className="mb-5">
-                  <h3
-                    className="hero-title text-[clamp(22px,3vw,40px)] uppercase leading-none text-[#111] mb-1"
-                  >
-                    {exp.role}
-                  </h3>
-                  <p className="text-sm text-[#111]/50 font-light">
-                    {exp.company}
-                  </p>
                 </div>
 
                 {/* Description bullets */}
@@ -219,10 +220,22 @@ export default function Experience() {
           </span>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              "🏆 Awarded \"Excellent Leader\" and \"Student of the Year\" — exceptional leadership during bachelor's degree",
-              "🎓 Participated in Cyber Shadez IT Event Management & CSR Trip at GLS University",
-              "🎖️ Multiple certificates in co-curricular activities — rangoli competitions, ramp walks, best-out-of-waste",
-              "📜 Completed C, C++, and Tally courses from Rashtriya Saksharta Mission Sanstha (Government-recognized)",
+              {
+                Icon: GraduationCap,
+                text: "Participated in Cyber Shadez IT Event Management & CSR Trip at GLS University",
+              },
+              {
+                Icon: Trophy,
+                text: "Awarded \"Excellent Leader\" and \"Student of the Year\" - exceptional leadership during bachelor's degree",
+              },
+              {
+                Icon: Award,
+                text: "Multiple certificates in co-curricular activities - rangoli competitions, ramp walks, best-out-of-waste",
+              },
+              {
+                Icon: ScrollText,
+                text: "Completed C, C++, and Tally courses from Rashtriya Saksharta Mission Sanstha (Government-recognized)",
+              },
             ].map((ach, i) => (
               <div
                 key={i}
@@ -233,8 +246,9 @@ export default function Experience() {
                   transition: `all 0.6s ease ${0.6 + i * 0.1}s`,
                 }}
               >
+                <ach.Icon size={20} strokeWidth={1.5} className="text-[#f5c842] shrink-0 mt-0.5" />
                 <p className="text-sm text-[#111]/70 font-light leading-relaxed">
-                  {ach}
+                  {ach.text}
                 </p>
               </div>
             ))}

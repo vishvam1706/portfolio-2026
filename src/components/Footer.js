@@ -3,17 +3,16 @@
 const socials = [
   { label: "GitHub", href: "https://github.com/Marujigar" },
   { label: "LinkedIn", href: "https://linkedin.com/in/jigarmaru" },
-  { label: "Email", href: "mailto:jigarmaru31@gmail.com" },
 ];
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-[#111] text-[#f8f8f6] py-12 md:py-16">
+    <footer className="bg-[#111] text-[#f8f8f6] py-10 md:py-12">
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Top row */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/10">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-white/10">
           {/* Logo */}
           <div className="flex items-center gap-1.5">
             <span
@@ -44,7 +43,7 @@ export default function Footer() {
               <a
                 key={s.label}
                 href={s.href}
-                target={s.href.startsWith("http") ? "_blank" : undefined}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs uppercase tracking-wider text-white/30 hover:text-white transition-colors"
               >
@@ -55,13 +54,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 pt-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-6">
           <p className="text-xs text-white/20 font-light">
-            © {year} Jigar Maru. Designed &amp; developed with ❤️
-          </p>
-
-          <p className="text-xs text-white/20 font-light">
-            Project Manager · Software Analyst · Jamnagar, Gujarat
+            © {year} Jigar Maru.
           </p>
 
           <button
